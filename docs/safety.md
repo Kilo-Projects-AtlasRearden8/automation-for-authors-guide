@@ -3,6 +3,9 @@
 Before you run any script in this guide, read this page once. It takes three
 minutes, and it's the most important page here.
 
+If anything feels overwhelming, that's OK. Start small. Try the scripts on
+dummy files first. You're in control.
+
 ## The golden rules
 
 1. **Dry-run by default.** Every script shows you what it *would* do before it

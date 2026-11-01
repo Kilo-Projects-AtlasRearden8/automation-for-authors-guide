@@ -7,6 +7,9 @@ emails. It can feel like a second job. This guide walks you through
 automating those tasks with free tools, step by step, in plain English.
 Nothing here requires coding experience, API keys, or paid subscriptions.
 
+Take your time. You don't have to do it all at once. Pick one thing, try it,
+and see how it feels.
+
 ## Who this is for
 
 Dylan Asdale is a registered nurse turned AI author and founder of

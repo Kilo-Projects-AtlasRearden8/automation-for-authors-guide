@@ -5,15 +5,16 @@
 A beginner-friendly manual and static HTML site for automating author admin,
 published by Asdale Dynamics, LLC. Covers four automations using free tools,
 step by step, plain English, local-first: newsletter drafts, social posts,
-KDP uploads, and reader emails. Includes a printable automation planner.
+KDP uploads, and reader emails. Includes a printable, low-energy (ADHD-friendly)
+automation planner.
 
 **Project contents**
 
 | Folder | Contents |
 |--------|----------|
 | `docs/` | Eight Markdown manuals: intro, safety, glossary, newsletter-drafts, social-posts, kdp-uploads, reader-emails, automation-planner |
-| `static/` | A small HTML site: `index.html`, `intro.html`, `safety.html`, `glossary.html`, `newsletter-drafts.html`, `social-posts.html`, `kdp-uploads.html`, `reader-emails.html`, `automation-planner.html`, plus `style.css` (print styles for the planner) |
-| `scripts/` | Four Python scripts: `draft_newsletter.py`, `draft_social_posts.py`, `kdp_upload_prep.py`, `draft_reader_email.py` — dry-run by default, write local drafts only, never send/post/upload |
+| `static/` | Ten-page HTML site: `index.html`, `intro.html`, `safety.html`, `glossary.html`, `newsletter-drafts.html`, `social-posts.html`, `kdp-uploads.html`, `reader-emails.html`, `automation-planner.html`, plus `style.css` (print styles for the planner) |
+| `scripts/` | Four Python scripts: `draft_newsletter.py`, `draft_social_posts.py`, `kdp_upload_prep.py`, `draft_reader_email.py` — dry-run by default, write local drafts only, never send/post/upload/contact the internet |
 | `scripts/` | Example data: `books.example.json`, `readers.example.json` (fictional data only) |
 | `tests/` | Eighteen unit tests using the standard-library `unittest` framework |
 
@@ -23,6 +24,7 @@ KDP uploads, and reader emails. Includes a printable automation planner.
 - With `--apply`, scripts write local draft files only. Originals are never moved, overwritten, or deleted.
 - Scripts never send email, never post to social media, never upload to KDP, and never touch the internet.
 - No secrets, API keys, or personal data anywhere. Example data files use clearly fictional names.
+- Every file is committed under the existing git identity; no co-author trailers.
 
 ## How to run it
 
@@ -46,7 +48,8 @@ python3 scripts/draft_newsletter.py --book "My Book" --update "Chapter 3 done" -
 directly in a web browser. No build step required.
 
 **Printable planner:** open `static/automation-planner.html` and choose
-File → Print.
+File → Print. Designed to be low-energy: pick one day, pick one task; rest
+is built in.
 
 ## Verification results
 
@@ -56,6 +59,7 @@ File → Print.
 - `scripts/books.example.json` → valid JSON; prep check reports 0 issues
 - End-to-end smoke tests with `--apply` on all four scripts → draft files written to `drafts/`, `kdp-prep/`, `reader-emails/`; dry-runs write nothing
 - All ten `static/*.html` files → parse as valid HTML
+- Git initialized and committed (root commit `c400717`); working tree clean
 
 ## Known gaps
 
@@ -65,5 +69,6 @@ File → Print.
 - Social character counts are approximate guides, not platform guarantees.
 - `kdp_upload_prep.py` validates metadata shape and limits only; it does not inspect manuscript or cover file contents.
 - Site is static HTML only; no search, no build pipeline.
+- No CI/CD workflows (`.github/workflows`) — intentionally omitted per requirements.
 
 Published by Asdale Dynamics, LLC. MIT License. Copyright (c) 2026 Asdale Dynamics, LLC.
