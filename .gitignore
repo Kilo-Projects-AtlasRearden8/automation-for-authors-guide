@@ -1,0 +1,16 @@
+
+# Local test output / runtime artifacts
+*.py[cod]
+*.pyc
+*.pyo
+__pycache__/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+.venv/
+drafts/
+output/
+reader-emails/
+kdp-prep/
+node_modules/

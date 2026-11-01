@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safety First — Automating Author Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <h1>Safety First</h1>
+    <p>Read this once before running any script.</p>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="safety.html" class="active">Safety First</a></li>
+    <li><a href="intro.html">Welcome</a></li>
+    <li><a href="newsletter-drafts.html">Newsletter Drafts</a></li>
+    <li><a href="social-posts.html">Social Posts</a></li>
+    <li><a href="kdp-uploads.html">KDP Uploads</a></li>
+    <li><a href="reader-emails.html">Reader Emails</a></li>
+    <li><a href="automation-planner.html">Printable Planner</a></li>
+    <li><a href="glossary.html">Glossary</a></li>
+  </ul>
+</nav>
+
+<main>
+  <aside class="sidebar">
+    <h2>Guide</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="safety.html" class="active">Safety First</a></li>
+      <li><a href="intro.html">Welcome</a></li>
+      <li><a href="newsletter-drafts.html">Newsletter Drafts</a></li>
+      <li><a href="social-posts.html">Social Posts</a></li>
+      <li><a href="kdp-uploads.html">KDP Uploads</a></li>
+      <li><a href="reader-emails.html">Reader Emails</a></li>
+      <li><a href="automation-planner.html">Printable Planner</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+    </ul>
+  </aside>
+
+  <article class="content">
+    <h1>Safety First</h1>
+    <p>Before you run any script in this guide, read this page once. It takes
+    three minutes, and it's the most important page here.</p>
+
+    <h2>The golden rules</h2>
+    <ol>
+      <li><p><strong>Dry-run by default.</strong> Every script shows you what
+      it <em>would</em> do before it changes anything. Run it without
+      <code>--apply</code> first, every time.</p></li>
+      <li><p><strong>Copies, never originals.</strong> Scripts in this guide
+      create new draft files. They never move, overwrite, or delete your
+      manuscripts, cover files, or reader lists.</p></li>
+      <li><p><strong>Local only.</strong> Nothing here connects to the
+      internet. No email is sent, no post is published, no file is uploaded
+      to KDP by a script. You do those steps yourself, when you're ready.</p></li>
+      <li><p><strong>No secrets.</strong> Never put passwords, API keys,
+      credit card numbers, or real reader addresses in any file in this
+      guide. Example data files are clearly marked and contain fictional
+      names only.</p></li>
+      <li><p><strong>Test on copies first.</strong> Try each script on a
+      small folder of dummy files before you point it at your real book
+      files.</p></li>
+    </ol>
+
+    <h2>What "dry-run" means</h2>
+    <p>When you run a script like this:</p>
+    <pre>python3 scripts/draft_newsletter.py --book "My Book" --update "Chapter 3 done"</pre>
+    <p>it prints the draft to your screen and changes nothing on disk. Add
+    <code>--apply</code> to actually write the draft file:</p>
+    <pre>python3 scripts/draft_newsletter.py --book "My Book" --update "Chapter 3 done" --apply</pre>
+
+    <div class="warn-box">
+      <p><strong>What this guide is not:</strong> It's not medical, legal,
+      tax, or publishing advice. It doesn't replace Amazon KDP &mdash; you
+      still log into kdp.amazon.com yourself and click Publish.</p>
+    </div>
+
+    <h2>Why local-first</h2>
+    <p>Cloud tools are convenient, but they mean your drafts live on someone
+    else's server. This guide keeps everything on your computer: drafts,
+    checklists, and planners stay in folders you control. You copy them into
+    MailerLite, Substack, Amazon KDP, or your email app only when
+    <em>you</em> choose to.</p>
+
+    <p class="no-print"><em>Asdale Dynamics, LLC &mdash; tested, local-first,
+    no secrets.</em></p>
+  </article>
+</main>
+
+<footer>
+  <p>&copy; 2026 Asdale Dynamics, LLC. MIT License.</p>
+</footer>
+
+</body>
+</html>

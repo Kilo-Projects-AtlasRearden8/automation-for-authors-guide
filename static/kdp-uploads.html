@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KDP Uploads — Automating Author Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <h1>KDP Uploads</h1>
+    <p>Prep your book metadata with a pre-upload checklist.</p>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="safety.html">Safety First</a></li>
+    <li><a href="newsletter-drafts.html">Newsletter Drafts</a></li>
+    <li><a href="social-posts.html">Social Posts</a></li>
+    <li><a href="kdp-uploads.html" class="active">KDP Uploads</a></li>
+    <li><a href="reader-emails.html">Reader Emails</a></li>
+    <li><a href="automation-planner.html">Printable Planner</a></li>
+    <li><a href="glossary.html">Glossary</a></li>
+  </ul>
+</nav>
+
+<main>
+  <aside class="sidebar">
+    <h2>Guide</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="safety.html">Safety First</a></li>
+      <li><a href="newsletter-drafts.html">Newsletter Drafts</a></li>
+      <li><a href="social-posts.html">Social Posts</a></li>
+      <li><a href="kdp-uploads.html" class="active">KDP Uploads</a></li>
+      <li><a href="reader-emails.html">Reader Emails</a></li>
+      <li><a href="automation-planner.html">Printable Planner</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+    </ul>
+  </aside>
+
+  <article class="content">
+    <h1>KDP Uploads</h1>
+    <p>KDP (Kindle Direct Publishing) is Amazon's free self-publishing
+    platform. Uploading a book means filling in metadata, uploading your
+    manuscript and cover, and setting a price. This automation doesn't upload
+    for you &mdash; it prepares everything so the actual upload takes minutes
+    instead of hours.</p>
+
+    <h2>What it does</h2>
+    <p><code>scripts/kdp_upload_prep.py</code> reads a small metadata JSON
+    file, checks it against KDP's public limits (description under 4000
+    characters, up to 7 keywords, up to 2 categories, valid ISBN shape,
+    accepted file types), and writes a pre-upload checklist plus a
+    machine-readable manifest. It never contacts Amazon and never uploads
+    anything.</p>
+
+    <h2>Step by step</h2>
+    <ol>
+      <li><p><strong>Look at the example metadata.</strong>
+      <code>scripts/books.example.json</code> shows the shape. Change every
+      value to your own and save as <code>scripts/my-book.json</code>.</p>
+        <div class="warn-box">
+          <p><strong>No personal data:</strong> use your author name (pen
+          names are fine), not your home address or phone number.</p>
+        </div></li>
+      <li><p><strong>Run the prep check (dry-run):</strong></p>
+        <pre>python3 scripts/kdp_upload_prep.py --metadata scripts/my-book.json</pre>
+        <p>You'll see a checklist and any issues: too many keywords, a
+        too-long description, an unrecognized file extension, etc.</p></li>
+      <li><p><strong>Fix issues, then write the prep files:</strong></p>
+        <pre>python3 scripts/kdp_upload_prep.py --metadata scripts/my-book.json --apply</pre>
+        <p>This writes <code>kdp-prep/kdp-prep-checklist.md</code> and
+        <code>kdp-prep/kdp-prep-manifest.json</code>. Re-run until the
+        checklist says "No issues found."</p></li>
+      <li><p><strong>Upload at KDP yourself.</strong> Log into
+      kdp.amazon.com, copy your details from the checklist, upload your
+      manuscript and cover, set your price, and click Publish. The script
+      never touches your KDP account.</p></li>
+    </ol>
+
+    <h2>KDP limits to remember</h2>
+    <table>
+      <thead><tr><th>Field</th><th>Limit</th></tr></thead>
+      <tbody>
+        <tr><td>Description</td><td>Up to 4,000 characters</td></tr>
+        <tr><td>Keywords</td><td>Up to 7</td></tr>
+        <tr><td>Categories</td><td>Up to 2</td></tr>
+        <tr><td>Manuscript</td><td>DOCX, PDF, EPUB, HTML, TXT, RTF, DOC</td></tr>
+        <tr><td>Cover</td><td>JPEG or TIFF recommended; 2500+ pixels on the longest side</td></tr>
+        <tr><td>ISBN</td><td>10 or 13 digits (KDP can assign one free)</td></tr>
+      </tbody>
+    </table>
+
+    <p class="no-print"><em>Asdale Dynamics, LLC &mdash; tested, local-first,
+    no secrets.</em></p>
+  </article>
+</main>
+
+<footer>
+  <p>&copy; 2026 Asdale Dynamics, LLC. MIT License.</p>
+</footer>
+
+</body>
+</html>

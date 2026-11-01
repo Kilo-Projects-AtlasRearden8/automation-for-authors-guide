@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Printable Automation Planner — Automating Author Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <h1>Printable Automation Planner</h1>
+    <p>Print this page and fill it in by hand.</p>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="safety.html">Safety First</a></li>
+    <li><a href="newsletter-drafts.html">Newsletter Drafts</a></li>
+    <li><a href="social-posts.html">Social Posts</a></li>
+    <li><a href="kdp-uploads.html">KDP Uploads</a></li>
+    <li><a href="reader-emails.html">Reader Emails</a></li>
+    <li><a href="automation-planner.html" class="active">Printable Planner</a></li>
+    <li><a href="glossary.html">Glossary</a></li>
+  </ul>
+</nav>
+
+<main>
+  <aside class="sidebar">
+    <h2>Guide</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="safety.html">Safety First</a></li>
+      <li><a href="newsletter-drafts.html">Newsletter Drafts</a></li>
+      <li><a href="social-posts.html">Social Posts</a></li>
+      <li><a href="kdp-uploads.html">KDP Uploads</a></li>
+      <li><a href="reader-emails.html">Reader Emails</a></li>
+      <li><a href="automation-planner.html" class="active">Printable Planner</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+    </ul>
+  </aside>
+
+  <article class="content">
+    <h1>Printable Automation Planner</h1>
+    <p>Print this page and fill it in by hand. It's your weekly reminder of
+    which author-admin tasks to do, when, and with which tool.</p>
+    <p class="no-print"><strong>Print:</strong> <em>File → Print →
+    Landscape</em> (Portrait works too).</p>
+
+    <h2>Your week at a glance</h2>
+    <table>
+      <thead><tr><th>Day</th><th>Task</th><th>Tool</th><th>Done</th></tr></thead>
+      <tbody>
+        <tr><td>Monday</td><td>Draft this week's newsletter</td><td><code>draft_newsletter.py</code></td><td>[&nbsp;]</td></tr>
+        <tr><td>Monday</td><td>Draft social posts for the week</td><td><code>draft_social_posts.py</code></td><td>[&nbsp;]</td></tr>
+        <tr><td>Wednesday</td><td>Check KDP upload checklist</td><td><code>kdp_upload_prep.py</code></td><td>[&nbsp;]</td></tr>
+        <tr><td>Friday</td><td>Draft a reader email</td><td><code>draft_reader_email.py</code></td><td>[&nbsp;]</td></tr>
+        <tr><td>Sunday</td><td>Rest &mdash; nothing required</td><td>&mdash;</td><td>[&nbsp;]</td></tr>
+      </tbody>
+    </table>
+    <p class="no-print">You don't have to do every task every week. Pick one
+    day, pick one task.</p>
+
+    <h2>Monthly check-in</h2>
+    <table>
+      <thead><tr><th>Task</th><th>When</th><th>Done</th></tr></thead>
+      <tbody>
+        <tr><td>Review last month's drafts &mdash; what got sent, what didn't</td><td>First Sunday of month</td><td>[&nbsp;]</td></tr>
+        <tr><td>Update <code>books.example.json</code> &rarr; your real <code>my-book.json</code> metadata</td><td>First Sunday of month</td><td>[&nbsp;]</td></tr>
+        <tr><td>Back up your <code>drafts/</code>, <code>kdp-prep/</code>, and <code>reader-emails/</code> folders</td><td>First Sunday of month</td><td>[&nbsp;]</td></tr>
+        <tr><td>Check your book's KDP page for sales and reviews</td><td>First Sunday of month</td><td>[&nbsp;]</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Automation quick reference</h2>
+    <table>
+      <thead><tr><th>Task</th><th>Command (dry-run)</th><th>Command (write file)</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Newsletter draft</td>
+          <td><code>python3 scripts/draft_newsletter.py --book ... --update ...</code></td>
+          <td>add <code>--apply</code></td>
+        </tr>
+        <tr>
+          <td>Social posts</td>
+          <td><code>python3 scripts/draft_social_posts.py --book ... --hook ... --link ...</code></td>
+          <td>add <code>--apply</code></td>
+        </tr>
+        <tr>
+          <td>KDP prep</td>
+          <td><code>python3 scripts/kdp_upload_prep.py --metadata scripts/my-book.json</code></td>
+          <td>add <code>--apply</code></td>
+        </tr>
+        <tr>
+          <td>Reader email</td>
+          <td><code>python3 scripts/draft_reader_email.py --type thank-you --reader ... --book ...</code></td>
+          <td>add <code>--apply</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Notes</h2>
+    <p>Use this space for ideas, link reminders, or reader names (first names
+    only &mdash; no addresses or order IDs):</p>
+    <p style="height: 100px; border: 1px solid var(--line);"></p>
+    <p style="height: 100px; border: 1px solid var(--line);"></p>
+    <p style="height: 100px; border: 1px solid var(--line);"></p>
+
+    <p class="no-print"><em>Planner published by Asdale Dynamics, LLC &
+mdash; tested, local-first, no secrets. MIT License. Copyright (c) 2026
+Asdale Dynamics, LLC.</em></p>
+  </article>
+</main>
+
+<footer>
+  <p>&copy; 2026 Asdale Dynamics, LLC. MIT License.</p>
+</footer>
+
+</body>
+</html>

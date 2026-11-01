@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newsletter Drafts — Automating Author Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <h1>Newsletter Drafts</h1>
+    <p>Draft newsletter emails locally before you send.</p>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="safety.html">Safety First</a></li>
+    <li><a href="newsletter-drafts.html" class="active">Newsletter Drafts</a></li>
+    <li><a href="social-posts.html">Social Posts</a></li>
+    <li><a href="kdp-uploads.html">KDP Uploads</a></li>
+    <li><a href="reader-emails.html">Reader Emails</a></li>
+    <li><a href="automation-planner.html">Printable Planner</a></li>
+    <li><a href="glossary.html">Glossary</a></li>
+  </ul>
+</nav>
+
+<main>
+  <aside class="sidebar">
+    <h2>Guide</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="safety.html">Safety First</a></li>
+      <li><a href="newsletter-drafts.html" class="active">Newsletter Drafts</a></li>
+      <li><a href="social-posts.html">Social Posts</a></li>
+      <li><a href="kdp-uploads.html">KDP Uploads</a></li>
+      <li><a href="reader-emails.html">Reader Emails</a></li>
+      <li><a href="automation-planner.html">Printable Planner</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+    </ul>
+  </aside>
+
+  <article class="content">
+    <h1>Newsletter Drafts</h1>
+    <p>A newsletter is an email you send to readers who signed up to hear from
+    you. It's one of the best ways to sell books, but staring at a blank
+    "compose" window is hard. This automation drafts your newsletter locally,
+    so you always have something to work from.</p>
+
+    <h2>What it does</h2>
+    <p><code>scripts/draft_newsletter.py</code> writes a newsletter draft
+    Markdown file from a book title, an update paragraph, and a few lines you
+    choose. It never sends email &mdash; it just gives you a draft to open in
+    any text editor and copy into your newsletter tool (MailerLite, Substack,
+    ConvertKit, or your own email app).</p>
+
+    <h2>Step by step</h2>
+    <ol>
+      <li><p><strong>Try it in dry-run mode.</strong> Open your terminal in
+      this folder and run:</p>
+        <pre>python3 scripts/draft_newsletter.py \
+  --book "The Massive AI Manual" \
+  --update "Chapter 12 is finished, and the cover proof came back today." \
+  --intro "I hope you're having a good week." \
+  --cta "Pre-order here: https://example.com/book"</pre>
+        <p>You'll see the full draft printed on screen. Nothing is saved yet.</p></li>
+      <li><p><strong>Write the draft to a file.</strong> When you're happy
+      with it, run with <code>--apply</code>:</p>
+        <pre>python3 scripts/draft_newsletter.py \
+  --book "The Massive AI Manual" \
+  --update "Chapter 12 is finished, and the cover proof came back today." \
+  --first-name "Reader" \
+  --apply</pre>
+        <p>This creates <code>drafts/newsletter-draft.md</code>. Open it in
+        any text editor, tweak the wording, then copy it into your newsletter
+        tool.</p></li>
+      <li><p><strong>Personalize and send yourself.</strong> Copy the draft
+      into MailerLite, Substack, ConvertKit, or your email app. Replace
+      <code>[your book link]</code> with your real link. Send it to yourself
+      first to check how it looks, then send to your list.</p></li>
+    </ol>
+
+    <h2>Options you can use</h2>
+    <table>
+      <thead><tr><th>Option</th><th>What it does</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><code>--book</code></td><td>Book title to feature</td><td><code>--book "My Book"</code></td></tr>
+        <tr><td><code>--update</code></td><td>What's new (required)</td><td><code>--update "New cover reveal!"</code></td></tr>
+        <tr><td><code>--first-name</code></td><td>Name in the greeting</td><td><code>--first-name "Alex"</code></td></tr>
+        <tr><td><code>--intro</code></td><td>Opening paragraph</td><td><code>--intro "Hi there,"</code></td></tr>
+        <tr><td><code>--cta</code></td><td>Call to action / link line</td><td><code>--cta "Get it: https://example.com"</code></td></tr>
+        <tr><td><code>--out</code></td><td>Where to write the draft</td><td><code>--out drafts/october.md</code></td></tr>
+        <tr><td><code>--apply</code></td><td>Actually write the file</td><td>(no value needed)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <p><strong>No-code alternative:</strong> keep a "newsletter template"
+      document in your notes app with placeholder sections &mdash; greeting,
+      what's new, book link, closing &mdash; and fill it in each time you
+      send. The script just automates that into a file.</p>
+    </div>
+
+    <p class="no-print"><em>Asdale Dynamics, LLC &mdash; tested, local-first,
+    no secrets.</em></p>
+  </article>
+</main>
+
+<footer>
+  <p>&copy; 2026 Asdale Dynamics, LLC. MIT License.</p>
+</footer>
+
+</body>
+</html>

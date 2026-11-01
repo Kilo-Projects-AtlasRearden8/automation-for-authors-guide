@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reader Emails — Automating Author Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <h1>Reader Emails</h1>
+    <p>Draft thank-you, ARC, and new-release emails locally.</p>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="safety.html">Safety First</a></li>
+    <li><a href="newsletter-drafts.html">Newsletter Drafts</a></li>
+    <li><a href="social-posts.html">Social Posts</a></li>
+    <li><a href="kdp-uploads.html">KDP Uploads</a></li>
+    <li><a href="reader-emails.html" class="active">Reader Emails</a></li>
+    <li><a href="automation-planner.html">Printable Planner</a></li>
+    <li><a href="glossary.html">Glossary</a></li>
+  </ul>
+</nav>
+
+<main>
+  <aside class="sidebar">
+    <h2>Guide</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="safety.html">Safety First</a></li>
+      <li><a href="newsletter-drafts.html">Newsletter Drafts</a></li>
+      <li><a href="social-posts.html">Social Posts</a></li>
+      <li><a href="kdp-uploads.html">KDP Uploads</a></li>
+      <li><a href="reader-emails.html" class="active">Reader Emails</a></li>
+      <li><a href="automation-planner.html">Printable Planner</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+    </ul>
+  </aside>
+
+  <article class="content">
+    <h1>Reader Emails</h1>
+    <p>Readers reply to books. Thank-you emails, advance reader copy (ARC)
+    offers, and new-release announcements build relationships &mdash; but
+    writing each one from scratch drains energy. This automation drafts them
+    locally so you always have a starting point.</p>
+
+    <h2>What it does</h2>
+    <p><code>scripts/draft_reader_email.py</code> drafts one of three email
+    types:</p>
+    <ul>
+      <li><strong>thank-you</strong> &mdash; for a reader who bought or read
+      your book</li>
+      <li><strong>arc</strong> &mdash; offering an advance reader copy
+      before launch</li>
+      <li><strong>new-release</strong> &mdash; announcing your book is live
+      with a link</li>
+    </ul>
+    <p>It never sends email &mdash; it writes a draft file you open,
+    personalize, and send from your own email app.</p>
+
+    <h2>Step by step</h2>
+    <ol>
+      <li><p><strong>Try a thank-you draft (dry-run):</strong></p>
+        <pre>python3 scripts/draft_reader_email.py \
+  --type thank-you \
+  --reader "Alex" \
+  --book "The Massive AI Manual"</pre>
+        <p>Review it on screen. Nothing is saved yet.</p></li>
+      <li><p><strong>Write the draft to a file:</strong></p>
+        <pre>python3 scripts/draft_reader_email.py \
+  --type thank-you \
+  --reader "Alex" \
+  --book "The Massive AI Manual" \
+  --apply</pre>
+        <p>This creates <code>reader-emails/email-draft.md</code>. Open it in
+        any text editor, change the wording to sound like you, then copy it
+        into your email app and send.</p></li>
+      <li><p><strong>Try the other types:</strong> swap <code>--type</code>
+      for <code>arc</code> or <code>new-release</code>. For new-release, add
+      <code>--link "https://example.com/book"</code>.</p></li>
+      <li><p><strong>Use test names, not real data.</strong> While
+      practicing, use names like "Alex." Never paste real reader addresses,
+      order IDs, or personal details into these files.</p></li>
+    </ol>
+
+    <h2>Options you can use</h2>
+    <table>
+      <thead><tr><th>Option</th><th>What it does</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><code>--type</code></td><td>Email type: thank-you, arc, new-release</td><td><code>--type arc</code></td></tr>
+        <tr><td><code>--reader</code></td><td>Reader's name</td><td><code>--reader "Alex"</code></td></tr>
+        <tr><td><code>--book</code></td><td>Book title (required)</td><td><code>--book "My Book"</code></td></tr>
+        <tr><td><code>--link</code></td><td>Book link for new-release emails</td><td><code>--link "https://example.com"</code></td></tr>
+        <tr><td><code>--out</code></td><td>Where to write the draft</td><td><code>--out reader-emails/august.md</code></td></tr>
+        <tr><td><code>--apply</code></td><td>Actually write the file</td><td>(no value needed)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warn-box">
+      <p><strong>Low-energy tip:</strong> if email feels overwhelming, draft
+      one email per week with this script and send it on the same day each
+      week. If you don't hear back, that's fine &mdash; the email still did
+      its job.</p>
+    </div>
+
+    <p class="no-print"><em>Asdale Dynamics, LLC &mdash; tested, local-first,
+    no secrets.</em></p>
+  </article>
+</main>
+
+<footer>
+  <p>&copy; 2026 Asdale Dynamics, LLC. MIT License.</p>
+</footer>
+
+</body>
+</html>

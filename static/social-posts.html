@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Posts — Automating Author Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <h1>Social Posts</h1>
+    <p>Draft posts for multiple platforms with character counts.</p>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="safety.html">Safety First</a></li>
+    <li><a href="newsletter-drafts.html">Newsletter Drafts</a></li>
+    <li><a href="social-posts.html" class="active">Social Posts</a></li>
+    <li><a href="kdp-uploads.html">KDP Uploads</a></li>
+    <li><a href="reader-emails.html">Reader Emails</a></li>
+    <li><a href="automation-planner.html">Printable Planner</a></li>
+    <li><a href="glossary.html">Glossary</a></li>
+  </ul>
+</nav>
+
+<main>
+  <aside class="sidebar">
+    <h2>Guide</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="safety.html">Safety First</a></li>
+      <li><a href="newsletter-drafts.html">Newsletter Drafts</a></li>
+      <li><a href="social-posts.html" class="active">Social Posts</a></li>
+      <li><a href="kdp-uploads.html">KDP Uploads</a></li>
+      <li><a href="reader-emails.html">Reader Emails</a></li>
+      <li><a href="automation-planner.html">Printable Planner</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+    </ul>
+  </aside>
+
+  <article class="content">
+    <h1>Social Posts</h1>
+    <p>Posting about your book on Instagram, Facebook, X/Twitter, TikTok,
+    Bluesky, Mastodon, Threads, or LinkedIn takes time &mdash; especially when
+    you're rewriting the same announcement for every app. This automation
+    drafts all of them from one hook, one link, and your hashtags.</p>
+
+    <h2>What it does</h2>
+    <p><code>scripts/draft_social_posts.py</code> creates draft posts for six
+    platforms at once, each with a rough character count so you can see if a
+    post is too long. It never posts anywhere &mdash; it just gives you drafts
+    to copy into each app.</p>
+
+    <h2>Step by step</h2>
+    <ol>
+      <li><p><strong>Try it in dry-run mode:</strong></p>
+        <pre>python3 scripts/draft_social_posts.py \
+  --book "The Massive AI Manual" \
+  --hook "New cover reveal &mdash; what do you think?" \
+  --link "https://example.com/book" \
+  --hashtags "#amreading #indieauthor #newbook"</pre>
+        <p>Review the drafts on screen. Nothing is saved yet.</p></li>
+      <li><p><strong>Write the drafts to a file:</strong></p>
+        <pre>python3 scripts/draft_social_posts.py \
+  --book "The Massive AI Manual" \
+  --hook "New cover reveal &mdash; what do you think?" \
+  --link "https://example.com/book" \
+  --hashtags "#amreading #indieauthor #newbook" \
+  --apply</pre>
+        <p>This creates <code>drafts/social-posts-draft.md</code>. Each
+        platform has its own block with an approximate character count.</p></li>
+      <li><p><strong>Copy and post yourself.</strong> Open each app, paste
+      the matching block, and hit post. Vary the wording a little for each
+      platform. Never share personal data (addresses, phone numbers, order
+      IDs) in a public post.</p></li>
+    </ol>
+
+    <h2>Platforms and rough limits</h2>
+    <table>
+      <thead><tr><th>Platform</th><th>Approx. limit</th></tr></thead>
+      <tbody>
+        <tr><td>X / Twitter</td><td>~280 characters</td></tr>
+        <tr><td>Mastodon / Bluesky / Threads</td><td>~280 characters</td></tr>
+        <tr><td>Instagram caption</td><td>~2200 characters</td></tr>
+        <tr><td>Facebook post</td><td>~500 characters</td></tr>
+        <tr><td>TikTok caption</td><td>~150 characters</td></tr>
+        <tr><td>LinkedIn post</td><td>~1300 characters</td></tr>
+      </tbody>
+    </table>
+    <p class="no-print">Character counts are approximate &mdash; check each
+    platform's current limit before publishing.</p>
+
+    <h2>A simple weekly rhythm</h2>
+    <table>
+      <thead><tr><th>Day</th><th>What to post</th></tr></thead>
+      <tbody>
+        <tr><td>Monday</td><td>One line about what you're writing this week</td></tr>
+        <tr><td>Wednesday</td><td>A quote or tip from your book</td></tr>
+        <tr><td>Friday</td><td>Link to your book with a one-sentence blurb</td></tr>
+        <tr><td>Sunday</td><td>Rest &mdash; no posting required</td></tr>
+      </tbody>
+    </table>
+
+    <p class="no-print"><em>Asdale Dynamics, LLC &mdash; tested, local-first,
+    no secrets.</em></p>
+  </article>
+</main>
+
+<footer>
+  <p>&copy; 2026 Asdale Dynamics, LLC. MIT License.</p>
+</footer>
+
+</body>
+</html>

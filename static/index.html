@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automating Author Admin — Asdale Dynamics, LLC</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <h1>Automating Author Admin</h1>
+    <p>Newsletter drafts, social posts, KDP uploads, and reader emails &mdash; using free tools, step by step, local-first.</p>
+    <p style="margin-top:0.5rem; font-size:0.9rem; color:#b9d9b2;">Published by Asdale Dynamics, LLC &middot; MIT License</p>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="safety.html">Safety First</a></li>
+    <li><a href="intro.html">Welcome</a></li>
+    <li><a href="newsletter-drafts.html">Newsletter Drafts</a></li>
+    <li><a href="social-posts.html">Social Posts</a></li>
+    <li><a href="kdp-uploads.html">KDP Uploads</a></li>
+    <li><a href="reader-emails.html">Reader Emails</a></li>
+    <li><a href="automation-planner.html">Printable Planner</a></li>
+    <li><a href="glossary.html">Glossary</a></li>
+  </ul>
+</nav>
+
+<main>
+  <aside class="sidebar">
+    <h2>Guide</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="safety.html">Safety First</a></li>
+      <li><a href="intro.html">Welcome</a></li>
+      <li><a href="newsletter-drafts.html">Newsletter Drafts</a></li>
+      <li><a href="social-posts.html">Social Posts</a></li>
+      <li><a href="kdp-uploads.html">KDP Uploads</a></li>
+      <li><a href="reader-emails.html">Reader Emails</a></li>
+      <li><a href="automation-planner.html">Printable Planner</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+    </ul>
+  </aside>
+
+  <article class="content">
+    <h1>Welcome</h1>
+    <p>You wrote a book. Now comes the admin: newsletter drafts, social posts,
+    KDP uploads, reader emails. This guide walks you through automating those
+    tasks with free tools &mdash; step by step, in plain English, never
+    condescending. No coding experience required.</p>
+
+    <div class="info-box">
+      <p><strong>No coding experience needed.</strong> Every script is
+      "no-code friendly": copy it, run it, and read what it does. Nothing
+      moves or deletes your original files without you saying so.</p>
+    </div>
+
+    <h2>The four automations</h2>
+    <table>
+      <thead>
+        <tr><th>Automation</th><th>What it does</th><th>Read more</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Newsletter Drafts</strong></td>
+          <td>Draft newsletter emails locally before you send them.</td>
+          <td><a href="newsletter-drafts.html">Read more</a></td>
+        </tr>
+        <tr>
+          <td><strong>Social Posts</strong></td>
+          <td>Draft posts for six platforms at once, with character counts.</td>
+          <td><a href="social-posts.html">Read more</a></td>
+        </tr>
+        <tr>
+          <td><strong>KDP Uploads</strong></td>
+          <td>Prep your book metadata with a pre-upload checklist.</td>
+          <td><a href="kdp-uploads.html">Read more</a></td>
+        </tr>
+        <tr>
+          <td><strong>Reader Emails</strong></td>
+          <td>Draft thank-you, ARC, and new-release emails locally.</td>
+          <td><a href="reader-emails.html">Read more</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Quick start</h2>
+    <ol>
+      <li><p>Read <a href="safety.html">Safety First</a> before running anything.</p></li>
+      <li><p>Pick an automation and follow its page step by step.</p></li>
+      <li><p>Run the script in dry-run mode (the default) &mdash; it shows what it
+      <em>would</em> do without changing anything:</p>
+        <pre>python3 scripts/draft_newsletter.py --book "My Book" --update "Chapter 3 done"</pre></li>
+      <li><p>When you're comfortable, back up your folder and run with
+      <code>--apply</code> to write the draft file:</p>
+        <pre>python3 scripts/draft_newsletter.py --book "My Book" --update "Chapter 3 done" --apply</pre></li>
+    </ol>
+
+    <h2>What you need</h2>
+    <ul>
+      <li>A computer (Windows, Mac, or Linux)</li>
+      <li>Python 3 (built-in on Mac and Linux; free from python.org on Windows)</li>
+      <li>A web browser</li>
+      <li>A text editor (Notepad, TextEdit, VS Code, or whatever you already use)</li>
+      <li>About an hour to walk through everything</li>
+    </ul>
+
+    <h2>About</h2>
+    <p>Dylan Asdale is a registered nurse turned AI author and founder of
+    <strong>Asdale Dynamics, LLC</strong> (Indiana, formed October 2026). His
+    book <em>The Massive AI Manual</em> and hub site dylanasdale.github.io
+    explain AI "like a friend would." This guide is published by Asdale
+    Dynamics, LLC as part of its beginner-friendly AI education line.</p>
+
+    <div class="warn-box">
+      <p><strong>Safety first:</strong> test on copies, never move originals.
+      Every script runs in dry-run mode by default. No secrets, API keys, or
+      personal data are stored anywhere in this project.</p>
+    </div>
+
+    <p><strong>License:</strong> MIT License. Copyright (c) 2026 Asdale
+    Dynamics, LLC.</p>
+  </article>
+</main>
+
+<footer>
+  <p>&copy; 2026 Asdale Dynamics, LLC. MIT License. Beginner-friendly AI education, tested and local-first.</p>
+</footer>
+
+</body>
+</html>
